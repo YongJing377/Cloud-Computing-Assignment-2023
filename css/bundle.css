@@ -1,0 +1,241 @@
+.minimize-notification-container {
+    z-index: 100;
+    position: fixed;
+    bottom: 25px;
+    height: auto;
+    width: 90%;
+    right: 5%
+}
+
+.minimize-notification-container .box-container {
+    display: flex;
+    background: #005c79;
+    height: auto;
+    padding: 15px
+}
+
+.minimize-notification-container .box-container .title {
+    font-size: 26px;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: HelveticaNeueLTStd-HvCn;
+    margin-bottom: 0;
+    line-height: 2rem
+}
+
+.minimize-notification-container .box-container .desc {
+    font-size: 16px;
+    color: #fff;
+    font-family: HelveticaNeueLTStd-LtCn;
+    margin-bottom: 20px
+}
+
+.minimize-notification-container .box-container .btn-container a {
+    cursor: pointer;
+    padding: 5px 10px;
+    text-align: center;
+    background: #ef4d64;
+    color: #fff;
+    font-family: HelveticaNeueLTStd-LtCn
+}
+
+.minimize-notification-container .box-container .btn-container a:hover {
+    color: #fff
+}
+
+.minimize-notification-container .btn-mini-2 {
+    width: 0;
+    height: 0;
+    position: absolute
+}
+
+.minimize-notification-container .btn-mini {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 30px;
+    width: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+.minimize-notification-container .btn-mini .line-shape {
+    height: 4px;
+    width: 16px;
+    background: #fff
+}
+
+@media (min-width:767px) {
+    .minimize-notification-container {
+        width: 350px;
+        height: auto;
+        right: 10px;
+        bottom: 20px
+    }
+    .minimize-notification-container .box-container {
+        height: auto
+    }
+    .minimize-notification-container .box-container .title {
+        font-size: 30px;
+        line-height: 2.2rem
+    }
+    .minimize-notification-container .box-container .desc {
+        font-size: 18px
+    }
+}
+
+.minimize-notification-container.collapse:not(.show) {
+    display: block;
+    background: 0 0;
+    height: 115px;
+    width: 115px
+}
+
+.minimize-notification-container.collapse:not(.show) .box-container {
+    display: none;
+    height: 0
+}
+
+.minimize-notification-container.collapse:not(.show) .btn-mini-2 {
+    display: block;
+    width: 70px;
+    height: 70px;
+    background: 0 0;
+    background-image: url(/assets/img/icons/minimize-bell-icon.png);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-position-y: 0;
+    background-size: cover;
+    top: 52px;
+    right: -10px
+}
+
+@media (min-width:767px) {
+    .minimize-notification-container.collapse:not(.show) .btn-mini-2 {
+        width: 115px;
+        height: 115px;
+        top: 5px;
+        right: 10px
+    }
+}
+
+.minimize-notification-container {
+    z-index: 100;
+    position: fixed;
+    bottom: 15px;
+    height: auto;
+    width: 75%;
+    right: 3%
+}
+
+.minimize-notification-container .box-container {
+    display: flex;
+    background: #005c79;
+    height: auto;
+    padding: 15px
+}
+
+.minimize-notification-container .box-container .title {
+    font-size: 26px;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: HelveticaNeueLTStd-HvCn;
+    margin-bottom: 0;
+    line-height: 2rem
+}
+
+.minimize-notification-container .box-container .desc {
+    font-size: 16px;
+    color: #fff;
+    font-family: HelveticaNeueLTStd-LtCn;
+    margin-bottom: 20px
+}
+
+.minimize-notification-container .box-container .btn-container a {
+    cursor: pointer;
+    padding: 5px 10px;
+    text-align: center;
+    background: #ef4d64;
+    color: #fff;
+    font-family: HelveticaNeueLTStd-LtCn
+}
+
+.minimize-notification-container .box-container .btn-container a:hover {
+    color: #fff
+}
+
+.minimize-notification-container .btn-mini-2 {
+    width: 0;
+    height: 0;
+    position: absolute
+}
+
+.minimize-notification-container .btn-mini {
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    height: 20px;
+    width: 16px
+}
+
+.minimize-notification-container .btn-mini .line-shape {
+    height: 4px;
+    width: 16px;
+    background: #fff
+}
+
+@media (min-width:767px) {
+    .minimize-notification-container {
+        width: 280px;
+        height: auto;
+        right: 10px;
+        bottom: 10px;
+    }
+    .minimize-notification-container .box-container {
+        height: auto
+    }
+    .minimize-notification-container .box-container .title {
+        font-size: 30px;
+        line-height: 2.2rem
+    }
+    .minimize-notification-container .box-container .desc {
+        font-size: 18px
+    }
+}
+
+.minimize-notification-container.collapse:not(.show) {
+    display: block;
+    background: 0 0;
+    height: 115px;
+    width: 115px
+}
+
+.minimize-notification-container.collapse:not(.show) .box-container {
+    display: none;
+    height: 0
+}
+
+.minimize-notification-container.collapse:not(.show) .btn-mini-2 {
+    display: block;
+    width: 70px;
+    height: 70px;
+    background: 0 0;
+    background-image: url(/assets/img/icons/minimize-bell-icon.png);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-position-y: 0;
+    background-size: cover;
+    top: -10px;
+    right: -10px
+}
+
+@media (min-width:767px) {
+    .minimize-notification-container.collapse:not(.show) .btn-mini-2 {
+        width: 115px;
+        height: 115px;
+        top: 5px;
+        right: 10px
+    }
+}

@@ -1,0 +1,80 @@
+﻿#irizPromoModal .modal-dialog {
+  width: 100%;
+  max-width: 750px; }
+  #irizPromoModal .modal-dialog .modal-content {
+    background-color: transparent;
+    border: none; }
+    #irizPromoModal .modal-dialog .modal-content video {
+      width: 100%; }
+    #irizPromoModal .modal-dialog .modal-content .modal-header {
+      border: none; }
+      #irizPromoModal .modal-dialog .modal-content .modal-header .close {
+        position: absolute;
+        z-index: 2;
+        right: 2%;
+        top: 8%;
+        opacity: 1;
+        color: #fff;
+        background-color: rgba(185, 185, 185, 0.75);
+        font-size: 1.5rem;
+        padding: 0 6px 5px;
+        border-radius: 30px; }
+        #irizPromoModal .modal-dialog .modal-content .modal-header .close span {
+          line-height: 0; }
+    #irizPromoModal .modal-dialog .modal-content img {
+      width: 100%; }
+    #irizPromoModal .modal-dialog .modal-content .cta {
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+      border: 2px solid #fff;
+      padding: 3px 15px;
+      position: absolute;
+      top: 50%; 	  
+	  z-index: 9;
+	  }
+      #irizPromoModal .modal-dialog .modal-content .cta.iriz {
+        left: 26%; }
+        #irizPromoModal .modal-dialog .modal-content .cta.iriz:hover {
+          background-color: #2595c5;
+          border-color: #2595c5; }
+      #irizPromoModal .modal-dialog .modal-content .cta.persona {
+        left: 56%; }
+        #irizPromoModal .modal-dialog .modal-content .cta.persona:hover {
+          background-color: #8f253b;
+          border-color: #8f253b; }
+
+@media (max-width: 768px) {
+  #irizPromoModal .modal-dialog .modal-content .modal-body {
+    padding: 0; }
+  #irizPromoModal .modal-dialog .modal-content .cta {
+    top: 106%;
+    padding: 5px 15px; }
+    #irizPromoModal .modal-dialog .modal-content .cta.iriz {
+      left: 10%;
+      background-color: #2595c5;
+      border-color: #2595c5; }
+    #irizPromoModal .modal-dialog .modal-content .cta.persona {
+      background-color: #8f253b;
+      border-color: #8f253b; } }
+
+@media (max-width: 576px) {
+  #irizPromoModal .modal-dialog {
+    width: initial;
+    top: 15%; }
+    #irizPromoModal .modal-dialog .modal-content .modal-header .close {
+      display: none; }
+    #irizPromoModal .modal-dialog .modal-content .cta {
+      top: 103%;
+      padding: 15px 25px; }
+      #irizPromoModal .modal-dialog .modal-content .cta.iriz {
+        left: 10%;
+        background-color: #2595c5;
+        border-color: #2595c5; }
+      #irizPromoModal .modal-dialog .modal-content .cta.persona {
+        background-color: #8f253b;
+        border-color: #8f253b; } }
+
+@media (max-width: 576px) {
+  .modal-backdrop.show {
+    opacity: 0.8; } }
