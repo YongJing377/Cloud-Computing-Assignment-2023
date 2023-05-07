@@ -379,7 +379,7 @@ $id = $_POST["editId"];
 
             <?php
             // prepare and execute SELECT query
-            $query = "SELECT * FROM ProductDetails WHERE ID=$id";
+            $query = "SELECT * FROM ProductDetails WHERE ID = $id";
             $result = mysqli_query($conn, $query);
 
             // check if query executed successfully
@@ -393,9 +393,9 @@ $id = $_POST["editId"];
 
             $productid = $row['ProductId'];
             $query2 = "SELECT * FROM Product WHERE ID=$productid";
-            $result2 = mysqli_query($connection, $query);
+            $result2 = mysqli_query($connection, $query2);
             // fetch the first row from the result set
-            $row2 = mysqli_fetch_assoc($result);
+            $row2 = mysqli_fetch_assoc($result2);
 
             ?>
 
