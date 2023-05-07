@@ -519,7 +519,7 @@ if (!$conn) {
                                             <tr>
                                                         <td colspan='6'>
                                                             <form action='add-record.php' method='POST'>
-                                                            <button type='submit' value='".$row['ProductID']."' name='ID' id='ID' class='hidden btn'>Add</button>
+                                                            <button type='submit' value='".$row['ProductID']."' name='addId' id='addId' class='hidden btn'>Add</button>
                                                             </form>
                                                         </td>
                                                     </tr>

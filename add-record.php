@@ -375,7 +375,7 @@ if (!$conn) {
             </section>
             <!-- /End Home page Carousel -->
             <?php
-            $id = $_POST["ID"];
+            $id = $_POST["addId"];
             // prepare and execute SELECT query
             $query = "SELECT * FROM ProductDetails WHERE ID = $id";
             $result = mysqli_query($conn, $query);
