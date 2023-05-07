@@ -24,27 +24,27 @@
     <link rel="icon" type="image/png" href="/img/favicon.ico" sizes="128x128" />
 
     <!-- Font-Awesome -->
-    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- SLICK CROUSEL --->
-    <link rel="stylesheet" href="/css/slick.css">
-    <link rel="stylesheet" href="/css/slick-theme.css">
+    <link rel="stylesheet" href="./css/slick.css">
+    <link rel="stylesheet" href="./css/slick-theme.css">
 
     <!-- JQuery UI 1.12.1 -->
-    <link rel="stylesheet" href="/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="./css/jquery-ui.min.css">
 
     <!-- Jquery Selectize for custom dropdowns --->
-    <link rel="stylesheet" href="/css/selectize.css">
+    <link rel="stylesheet" href="./css/selectize.css">
 
     <!-- Compiled custom css -->
-    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
 
-    <link rel="stylesheet" type="text/css" href="/css/modal.css" />
+    <link rel="stylesheet" type="text/css" href="./css/modal.css" />
 
-    <link rel="stylesheet" type="text/css" href="/css/bundle.css">
+    <link rel="stylesheet" type="text/css" href="./css/bundle.css">
 
-    <link rel="stylesheet" type="text/css" href="/css/form-register.css">
+    <link rel="stylesheet" type="text/css" href="./css/form-register.css">
 
 
     <!-- Compiled free form custom css -->
@@ -99,8 +99,8 @@
             <nav class="navbar ">
 
 
-                <a class="navbar-brand" href="/">
-                    <img src="/img/PROTON Static Logo.png" alt="" width="338" height="60" DisableWebEdit="False" />
+                <a class="navbar-brand" href="./">
+                    <img src="./img/PROTON Static Logo.png" alt="" width="338" height="60" DisableWebEdit="False" />
                 </a>
 
 
@@ -112,7 +112,7 @@
 
                 <div class="nav-search-button">
                     <a href="#">
-                        <img src="/img/search-icon.png" alt="" width="24" height="24" />
+                        <img src="./img/search-icon.png" alt="" width="24" height="24" />
                     </a>
 
                     <div class="nav-search-input">
@@ -129,14 +129,14 @@
                                         <!-- Country Select Component -->
                                         <select name="country-select" class="country-select">
                                             <option value="/en" data-url="/en"
-                                                data-imagesrc="/img/malaysia-flag-icon.png" data-description="">
+                                                data-imagesrc="./img/malaysia-flag-icon.png" data-description="">
                                                 MY
                                             </option>
                                         </select>
                                         <!--/END Country Select Component -->
                                     </li>
                                     <li class="lang-select">
-                                        <a href="/login.html" class="selected-text-item">LOGIN</a>
+                                        <a href="./" class="selected-text-item">EN</a>
                                     </li>
 
                                 </ul>
@@ -145,20 +145,20 @@
                                 <ul class="social">
                                     <li>
                                         <a href="https://www.facebook.com/ProtonCarsOfficial/" class="" target="_blank">
-                                            <img src="/img/fb_navicon_top.png" alt="fb-icon" width="60" height="60" />
+                                            <img src="./img/fb_navicon_top.png" alt="fb-icon" width="60" height="60" />
                                         </a>
 
                                     </li>
                                     <li>
                                         <a href="https://www.instagram.com/protoncars" class="" target="_blank">
-                                            <img src="/img/ig_navicon_top.png" alt="instagram-icon" width="60"
+                                            <img src="./img/ig_navicon_top.png" alt="instagram-icon" width="60"
                                                 height="60" />
                                         </a>
 
                                     </li>
                                     <li>
                                         <a href="https://www.youtube.com/protoninteractive" class="" target="_blank">
-                                            <img src="/img/yt_navicon_top.png" alt="Youtube-icon" width="60"
+                                            <img src="./img/yt_navicon_top.png" alt="Youtube-icon" width="60"
                                                 height="60" />
                                         </a>
 
@@ -193,7 +193,7 @@
 
                                 <div class="menu-items-wrapper collapse" id="find-a-car">
                                     <div class="car-item">
-                                        <a href="/document/x50Details.pdf" target="_blank">
+                                        <a href="./document/x50Details.pdf" target="_blank">
                                             <div class="car-item-desc">
                                                 <span class="car-title">X50<br />
                                                     Starting at RM 86,300.00*</span>
@@ -205,7 +205,7 @@
                                         </a>
                                     </div>
                                     <div class="car-item">
-                                        <a href="/document/x70Details.pdf" target="_blank">
+                                        <a href="./document/x70Details.pdf" target="_blank">
                                             <div class="car-item-desc">
                                                 <span class="car-title">X70<br />
                                                     Starting at RM 98,800.00*</span>
@@ -217,7 +217,7 @@
                                         </a>
                                     </div>
                                     <div class="car-item">
-                                        <a href="/document/sagaDetails.pdf" target="_blank">
+                                        <a href="./document/sagaDetails.pdf" target="_blank">
                                             <div class="car-item-desc">
                                                 <span class="car-title">SAGA<br />
                                                     Starting at RM 34,800.00*</span>
@@ -229,7 +229,7 @@
                                         </a>
                                     </div>
                                     <div class="car-item">
-                                        <a href="/document/personaDetails.pdf" target="_blank">
+                                        <a href="./document/personaDetails.pdf" target="_blank">
                                             <div class="car-item-desc">
                                                 <span class="car-title">PERSONA<br />
                                                     Starting at RM 47,800.00*</span>
@@ -241,7 +241,7 @@
                                         </a>
                                     </div>
                                     <div class="car-item">
-                                        <a href="/document/irizDetails.pdf" target="_blank">
+                                        <a href="./document/irizDetails.pdf" target="_blank">
                                             <div class="car-item-desc">
                                                 <span class="car-title">IRIZ<br />
                                                     Starting at RM 42,800.00*</span>
@@ -253,7 +253,7 @@
                                         </a>
                                     </div>
                                     <div class="car-item">
-                                        <a href="/document/exoraDetails.pdf" target="_blank">
+                                        <a href="./document/exoraDetails.pdf" target="_blank">
                                             <div class="car-item-desc">
                                                 <span class="car-title">EXORA<br />
                                                     Starting at RM 62,800.00*</span>
@@ -277,15 +277,15 @@
                                     <div class="tool-item">
 
                                         <a href="/BookingPage.html">
-                                            <img src="/img/testdrive-icon.svg" alt="" width="80" height="85"
+                                            <img src="./img/testdrive-icon.svg" alt="" width="80" height="85"
                                                 DisableWebEdit="False" />
                                             <span>Book Test Drive</span>
                                         </a>
                                     </div>
                                     <div class="tool-item">
 
-                                        <a href="/Admin_index.php">
-                                            <img src="/img/carpricelist-icon.svg" alt="" width="80" height="85"
+                                        <a href="./Admin_index.php">
+                                            <img src="./img/carpricelist-icon.svg" alt="" width="80" height="85"
                                                 DisableWebEdit="False" />
                                             <span>Car Price List</span>
                                         </a>
@@ -320,10 +320,10 @@
 
                                 <div class="banner-wrapper" data-video-link="">
                                     <div class="banner-main feature-banner white left center-y"
-                                        style="background-image: url('/img/career_mainbanner_desktop.jpg')">
+                                        style="background-image: url('./img/career_mainbanner_desktop.jpg')">
 
 
-                                        <img src="/img/career_mainbanner_mobile.jpg" class="sm-mobile-view" alt=""
+                                        <img src="./img/career_mainbanner_mobile.jpg" class="sm-mobile-view" alt=""
                                             width="640" height="500" DisableWebEdit="False" />
 
 
@@ -376,7 +376,7 @@
                                                     </tr>
                                                     <tr>
                                                         <td>
-                                                            <img src="/img/X50.png" alt="" width="442" height="170" />
+                                                            <img src="./img/X50.png" alt="" width="442" height="170" />
                                                             <input type="file" class="form-control">
                                                         </td>
                                                     </tr>
@@ -413,11 +413,11 @@
                                         <?php
                                         // Define an array of data to populate the table
                                         $product = array(
-                                            "/img/X50.png",
-                                            "/img/X50.png",
-                                            "/img/X50.png",
-                                            "/img/X50.png",
-                                            "/img/X50.png"
+                                            "./img/X50.png",
+                                            "./img/X50.png",
+                                            "./img/X50.png",
+                                            "./img/X50.png",
+                                            "./img/X50.png"
                                         );
 
                                         $details = array(
@@ -726,17 +726,17 @@
                         <ul class="social-footer">
                             <li>
                                 <a href="https://www.facebook.com/ProtonCarsOfficial/" class="" target="_blank">
-                                    <img src="/img/fb_navicon_top.png" alt="fb-icon" width="60" height="60" />
+                                    <img src="./img/fb_navicon_top.png" alt="fb-icon" width="60" height="60" />
                                 </a>
                             </li>
                             <li>
                                 <a href="https://www.instagram.com/protoncars" class="" target="_blank">
-                                    <img src="/img/ig_navicon_top.png" alt="instagram-icon" width="60" height="60" />
+                                    <img src="./img/ig_navicon_top.png" alt="instagram-icon" width="60" height="60" />
                                 </a>
                             </li>
                             <li>
                                 <a href="https://www.youtube.com/protoninteractive" class="" target="_blank">
-                                    <img src="/img/yt_navicon_top.png" alt="Youtube-icon" width="60" height="60" />
+                                    <img src="./img/yt_navicon_top.png" alt="Youtube-icon" width="60" height="60" />
                                 </a>
                             </li>
                         </ul>
@@ -759,7 +759,7 @@
 
                             <!-- Country Select Component -->
                             <select name="country-select" class="country-select">
-                                <option value="/en" data-url="/en" data-imagesrc="/img/malaysia-flag-icon.png"
+                                <option value="/en" data-url="/en" data-imagesrc="./img/malaysia-flag-icon.png"
                                     data-description="">
                                     MY
                                 </option>
@@ -773,7 +773,7 @@
 
 
                         <div class="footer-copyright">
-                            <img src="/img/DRB6-01.svg" alt="" width="87" height="29" DisableWebEdit="False" />
+                            <img src="./img/DRB6-01.svg" alt="" width="87" height="29" DisableWebEdit="False" />
                             <span>&#169; 2023 PROTON HOLDINGS BERHAD (623177-A)</span>
                         </div>
 
@@ -813,15 +813,15 @@
     <script src="./js/nav-bar.js"></script>
 
     <!--////////// Components Scripts ////////////-->
-    <script src="/js/app.js"></script>
-    <script src="/js/config.js"></script>
-    <script src="/js/global-helpers-function.js"></script>
-    <script src="/js/sub-menu-nav.js"></script>
-    <script src="/js/secondary-nav.js"></script>
-    <script src="/js/widgets.js"></script>
-    <script src="/js/carousel.js"></script>
-    <script src="/js/gallery-slider.js"></script>
-    <script src="/js/video-banner.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/config.js"></script>
+    <script src="./js/global-helpers-function.js"></script>
+    <script src="./js/sub-menu-nav.js"></script>
+    <script src="./js/secondary-nav.js"></script>
+    <script src="./js/widgets.js"></script>
+    <script src="./js/carousel.js"></script>
+    <script src="./js/gallery-slider.js"></script>
+    <script src="./js/video-banner.js"></script>
     <!---    || path.ToLower().Contains("protonx70") || path.ToLower().Contains("copy-of-x70") -->
     <!-- Compiled free form custom js -->
     <!--////////// END/ Components Scripts ////////////-->
