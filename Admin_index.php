@@ -388,7 +388,7 @@ if (!$conn) {
                                                     </tr>
                                                     <tr>
                                                         <td>
-                                                            <img src="./img/X50.png" alt="" width="442" height="170" />
+                                                            <img src="./img/X50.png" alt="" width="442" height="170" hidden="true"/>
                                                             <input type="file" class="form-control">
                                                         </td>
                                                     </tr>
@@ -408,8 +408,14 @@ if (!$conn) {
                                                             <th>OTR LANGKAWI (RM)</th>
                                                         </tr>
                                                         <tr>
-                                                            <td colspan="5">
+                                                            <td colspan="3">
                                                                 <button type="button" class="btn">Add</button>
+                                                            </td>
+                                                            <td colspan="0">
+                                                                <button type="button" class="btn">Edit</button>
+                                                            </td>
+                                                            <td colspan="0">
+                                                                <button type="button" class="btn" hidden="true">Cancel</button>
                                                             </td>
                                                         </tr>
 
@@ -424,7 +430,7 @@ if (!$conn) {
 
                                         <?php
                                         // retrieve the product data
-                                        $sql = "SELECT Product.ProductImage, Product.Model, ProductDetails.Variant, ProductDetails.PMprice, ProductDetails.EMprice, ProductDetails.LABUANprice, ProductDetails.LANGKAWIprice 
+                                        $sql = "SELECT Product.ProductImage, Product.Model, ProductDetails.ID, ProductDetails.Variant, ProductDetails.PMprice, ProductDetails.EMprice, ProductDetails.LABUANprice, ProductDetails.LANGKAWIprice 
                                         FROM Product
                                         INNER JOIN ProductDetails
                                         ON Product.ProductID = ProductDetails.ProductID";
@@ -463,6 +469,7 @@ if (!$conn) {
                                                     <th>OTR EM (RM)</th>
                                                     <th>OTR LABUAN (RM)</th>
                                                     <th>OTR LANGKAWI (RM)</th>
+                                                    <th id='action' hidden='true'>Action</th>
                                                 </tr>
                                             ";
 
@@ -504,6 +511,7 @@ if (!$conn) {
                                                     <th>OTR EM (RM)</th>
                                                     <th>OTR LABUAN (RM)</th>
                                                     <th>OTR LANGKAWI (RM)</th>
+                                                    <th id='action' hidden='true'>Action</th>
                                                 </tr>
                                                     ";
 
@@ -531,7 +539,10 @@ if (!$conn) {
                                                                     <li>" . $row['PMprice'] . "</li>
                                                                 </ul>
                                                             </td>
-                                                        </tr>
+                                                            <td id='deletebtn' hidden='true'>
+                                                                <button type='button' value='".$row['ID']."' class='btn'>Delete</button>
+                                                            </td>
+                                                </tr>
                                                 ";
                                             }
                                             echo "
