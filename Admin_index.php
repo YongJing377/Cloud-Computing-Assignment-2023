@@ -106,6 +106,7 @@ if (!$conn) {
         .readonly {
             display: inline-block;
         }
+        
     </style>
 </head>
 
@@ -476,7 +477,7 @@ if (!$conn) {
                                                     <th>OTR EM (RM)</th>
                                                     <th>OTR LABUAN (RM)</th>
                                                     <th>OTR LANGKAWI (RM)</th>
-                                                    <th id='action' hidden='true'>Action</th>
+                                                    <th id='action' class='hidden'>Action</th>
                                                 </tr>
                                             ";
 
@@ -518,7 +519,7 @@ if (!$conn) {
                                                     <th>OTR EM (RM)</th>
                                                     <th>OTR LABUAN (RM)</th>
                                                     <th>OTR LANGKAWI (RM)</th>
-                                                    <th id='action' hidden='true'>Action</th>
+                                                    <th id='action' class='hidden'>Action</th>
                                                 </tr>
                                                     ";
 
@@ -546,8 +547,8 @@ if (!$conn) {
                                                                     <li><input class='readonly' type='text' value='" . $row['PMprice'] . "></li>
                                                                 </ul>
                                                             </td>
-                                                            <td id='deletebtn' hidden='true'>
-                                                                <button type='button' value='" . $row['ID'] . "' class='btn' hidden='true'>Delete</button>
+                                                            <td id='deletebtn' class='hidden'>
+                                                                <button type='button' value='" . $row['ID'] . "' class='hidden'>Delete</button>
                                                             </td>
                                                 </tr>
                                                 ";
@@ -793,5 +794,5 @@ if (!$conn) {
 
 <?php
 // close the database connection
-mysqli_close($conn);
+// mysqli_close($conn);
 ?>
