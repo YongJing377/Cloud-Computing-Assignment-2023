@@ -423,26 +423,17 @@ if (!$conn) {
 
 
                                         <?php
-                                        // Define an array of data to populate the table
-                                        $product = array(
-                                            "./img/X50.png",
-                                            "./img/X50.png",
-                                            "./img/X50.png",
-                                            "./img/X50.png",
-                                            "./img/X50.png"
-                                        );
+                                        // retrieve the product data
+                                        $sql = "SELECT Product.ProductImage, ProductDetails.Variant, ProductDetails.PMprice, ProductDetails.EMprice, ProductDetails.LABUANprice, ProductDetails.LANGKAWIprice 
+                                        FROM Product
+                                        INNER JOIN ProductDetails
+                                        ON Product.ProductID = ProductDetails.ProductID";
+                                        $result = mysqli_query($conn, $sql);
 
-                                        $details = array(
-                                            array("1.5T Standard", "86,300.00", "88,300.00", "82,600.00", "81,000.00"),
-                                            array("1.5T Standard", "86,300.00", "88,300.00", "82,600.00", "81,000.00"),
-                                            array("1.5T Standard", "86,300.00", "88,300.00", "82,600.00", "81,000.00"),
-                                            array("1.5T Standard", "86,300.00", "88,300.00", "82,600.00", "81,000.00"),
-                                            array("1.5T Standard", "86,300.00", "88,300.00", "82,600.00", "81,000.00")
-                                        );
-
-
-                                        // Loop through the data and generate a row for each item
-                                        foreach ($product as $row1) {
+                                        // check if any rows were returned
+                                        if (mysqli_num_rows($result) > 0) {
+                                            // output the product image
+                                            $row = mysqli_fetch_assoc($result);
                                             echo "
                                             <tr>
                                             <td class='text-center car-image' valign='top'>
@@ -453,7 +444,7 @@ if (!$conn) {
                                                     </tr>
                                                     <tr>
                                                         <td>
-                                                            <img src='$row1' alt='' width='442' height='170' />
+                                                            <img src='./img/".$row['ProductImage']."' alt='' width='442' height='170' />
                                                             <p>X50</p>
                                                         </td>
                                                     </tr>
@@ -465,44 +456,43 @@ if (!$conn) {
                                                 <div class='variants-prices-wrapper'>
 
                                                     <table class='a38aecf98-2fe0-43d0-87e9-c7a8a5ccb1aca'>
-                                            ";
-                                            foreach ($details as $row) {
-                                                echo "
-                                                <tr>
+                                                    <tr>
                                                     <th class='col-freez'>Variant</th>
                                                     <th>OTR PM (RM)</th>
                                                     <th>OTR EM (RM)</th>
                                                     <th>OTR LABUAN (RM)</th>
                                                     <th>OTR LANGKAWI (RM)</th>
                                                 </tr>
-                                                ";
-                                                foreach ($row as $cell) {
-                                                    echo "
-                                                        <tr>
-                                                            <td class='col-freez'>$cell</td>
+                                            ";
+
+                                            // output the product details
+                                            mysqli_data_seek($result, 0);
+                                            while ($row = mysqli_fetch_assoc($result)) {
+                                                echo "
+                                                <tr>
+                                                            <td class='col-freez'>".$row['Variant']."</td>
                                                             <td>
                                                                 <ul>
-                                                                    <li>$cell</li>
+                                                                    <li>".$row['PMprice']."</li>
                                                                 </ul>
                                                             </td>
                                                             <td>
                                                                 <ul>
-                                                                    <li>88,300.00</li>
+                                                                    <li>".$row['PMprice']."</li>
                                                                 </ul>
                                                             </td>
                                                             <td>
                                                                 <ul>
-                                                                    <li>82,600.00</li>
+                                                                    <li>".$row['PMprice']."</li>
                                                                 </ul>
                                                             </td>
                                                             <td>
                                                                 <ul>
-                                                                    <li>81,000.00</li>
+                                                                    <li>".$row['PMprice']."</li>
                                                                 </ul>
                                                             </td>
                                                         </tr>
-                                                    ";
-                                                }
+                                                ";
                                             }
                                             echo "
                                                         </table>
@@ -511,7 +501,10 @@ if (!$conn) {
                                             </tr>
                                             ";
 
+                                        } else {
+                                            echo "No product found.";
                                         }
+                                        
                                         ?>
                                         <tr>
                                             <td class="text-center car-image" valign="top">
@@ -840,3 +833,8 @@ if (!$conn) {
 </body>
 
 </html>
+
+<?php
+// close the database connection
+mysqli_close($conn);
+?>
