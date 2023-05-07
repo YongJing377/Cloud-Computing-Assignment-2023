@@ -547,7 +547,7 @@ if (!$conn) {
                                                                 </ul>
                                                             </td>
                                                             <td id='deletebtn' class='hidden'>
-                                                                <button type='button' id='delete-btn' onclick='delete('" . $row['ID'] . "')' class='hidden btn'>Delete</button>
+                                                                <button type='button' id='delete-btn' data-id='" . $row['ID'] . "' class='hidden btn'>Delete</button>
                                                             </td>
                                                 </tr>
                                                 ";
