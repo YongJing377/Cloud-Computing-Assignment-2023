@@ -24,6 +24,8 @@ $result = mysqli_query($conn, $query);
 if (!$result) {
     echo "Error executing query: " . mysqli_error($conn);
     exit();
+}else{
+    echo "Execute Success";
 }
 
 // fetch the first row from the result set
