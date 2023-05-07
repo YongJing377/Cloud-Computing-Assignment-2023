@@ -18,7 +18,7 @@ $langkawi = $_POST["langkawi"];
 // Construct and execute SQL query to delete record
 $sql = "UPDATE ProductDetails
 SET Variant = $variant, PMprice = $pmprice, EMprice = $emprice, LABUANprice = $labuan, LANGKAWIprice = $langkawi
-WHERE ID=$id;
+WHERE ID=$id
 ";
 
 if ($conn->query($sql) === TRUE) {

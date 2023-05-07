@@ -516,6 +516,13 @@ if (!$conn) {
                                                 ";
                                             }
                                             echo "
+                                            <tr>
+                                                        <td colspan='6'>
+                                                            <form action='add-record.php' method='POST'>
+                                                            <button type='submit' class='hidden btn'>Add</button>
+                                                            </form>
+                                                        </td>
+                                                    </tr>
                                                         </table>
                                                     </div>
                                                 </td>
