@@ -470,6 +470,7 @@ if (!$conn) {
                                             mysqli_data_seek($result, 0);
                                             while ($row = mysqli_fetch_assoc($result)) {
                                                 if ($image != $row['ProductImage']) {
+                                                    $image = $row['ProductImage'];
                                                     echo "
                                                     
                                                             </table>
