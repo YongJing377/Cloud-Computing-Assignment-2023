@@ -393,9 +393,9 @@ if (!$conn) {
 
             // fetch the first row from the result set
             $row = mysqli_fetch_assoc($result);
+            // echo "<h1></h1>";
 
-            ?>
-            <input type="text" value="<?php echo $id; ?>" id="productid" name="productid" hidden="true" readonly>
+            ?>    
 
             <section class="container-fluid no-margin no-padding light-grey-2 cars-price-list-section-wrapper">
                 <div class="container">
@@ -404,6 +404,7 @@ if (!$conn) {
                             <form action="add-record-process.php" method="POST"
                                 class="online-booking-form x50-booking-form text-left"
                                 onsubmit="return confirm('Are you sure to add record?');">
+                                <input type="text" value="<?php echo $id; ?>" id="productid" name="productid" hidden="true" readonly>
                                 <div class="row no-gutters">
                                     <div class="col">
                                         <div class="form-group"
