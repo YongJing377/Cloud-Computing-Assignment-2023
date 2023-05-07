@@ -16,6 +16,7 @@ $pmprice = $_POST["pmprice"];
 $emprice = $_POST["emprice"];
 $labuan = $_POST["labuan"];
 $langkawi = $_POST["langkawi"];
+echo "$id";
 
 // Construct and execute SQL query to delete record
 $sql = "INSERT INTO ProductDetails (Variant, PMprice, EMprice, LABUANprice, LANGKAWIprice, ProductID) VALUES ('$variant', '$pmprice', '$emprice', '$labuan', '$langkawi', '$id')";

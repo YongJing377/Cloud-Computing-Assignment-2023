@@ -395,7 +395,8 @@ if (!$conn) {
             $row = mysqli_fetch_assoc($result);
 
             ?>
-            <input type="text" value="<?php echo $id ?>" id="productid" name="productid" hidden="true">
+            <input type="text" value="<?php echo $id; ?>" id="productid" name="productid" hidden="true" readonly>
+
             <section class="container-fluid no-margin no-padding light-grey-2 cars-price-list-section-wrapper">
                 <div class="container">
                     <div class="row no-gutters">
