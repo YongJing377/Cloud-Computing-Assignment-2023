@@ -363,41 +363,85 @@
             </section>
             <!-- /End Home page Carousel -->
 
-
             <section class="container-fluid no-margin no-padding light-grey-2 cars-price-list-section-wrapper">
                 <div class="container">
-                    <div class="row">
-                        <div class="col">
-                            <form method="POST" action="add-record-process.php"
-                                onsubmit="return confirm('Are you sure to add this record');">
-                                <label for="disabled_input">Model:</label>
-                                <select id="model" name="model">
-                                    <option value="X50">X50</option>
-                                    <option value="X70">X70</option>
-                                    <option value="Saga">Saga</option>
-                                    <option value="Persona">Persona</option>
-                                    <option value="Iriz">Iriz</option>
-                                    <option value="Exora">Exora</option>
-                                </select>
+                    <div class="row no-gutters">
+                        <div class="col text-center">
+                            <form action="add-record.php" method="POST"
+                                class="online-booking-form x50-booking-form text-left" onsubmit="return confirm('Are you sure to add record?');">
+                                <div class="row no-gutters">
+                                    <div class="col">
+                                        <div class="form-group"
+                                            style="display: flex; justify-content: center; align-items: center;">
+                                            <label for="model">Model:</label>
+                                            <select class="form-control" id="model" name="model">
+                                                <option value="X50">X50</option>
+                                                <option value="X70">X70</option>
+                                                <option value="Saga">Saga</option>
+                                                <option value="Persona">Persona</option>
+                                                <option value="Iriz">Iriz</option>
+                                                <option value="Exora">Exora</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row no-gutters">
+                                    <div class="col">
+                                        <div class="form-group"
+                                            style="display: flex; justify-content: center; align-items: center;">
+                                            <label for="variant">Variant:</label>
+                                            <input type="text" class="form-control" id="variant" name="variant"
+                                                required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row no-gutters">
+                                    <div class="col">
+                                        <div class="form-group"
+                                            style="display: flex; justify-content: center; align-items: center;">
+                                            <label for="pmprice">PM Price:</label>
+                                            <input type="text" class="form-control" id="pmprice" name="pmprice"
+                                                required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row no-gutters">
+                                    <div class="col">
+                                        <div class="form-group"
+                                            style="display: flex; justify-content: center; align-items: center;">
+                                            <label for="emprice">EM Price:</label>
+                                            <input type="text" class="form-control" id="emprice" name="variempriceant"
+                                                required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row no-gutters">
+                                    <div class="col">
+                                        <div class="form-group"
+                                            style="display: flex; justify-content: center; align-items: center;">
+                                            <label for="labuan">Labuan Price:</label>
+                                            <input type="text" class="form-control" id="labuan" name="labuan"
+                                                required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row no-gutters">
+                                    <div class="col">
+                                        <div class="form-group"
+                                            style="display: flex; justify-content: center; align-items: center;">
+                                            <label for="langkawi">Langkawi:</label>
+                                            <input type="text" class="form-control" id="langkawi" name="langkawi"
+                                                required>
+                                        </div>
+                                    </div>
+                                </div>
 
-                                <label for="variant">Variant:</label>
-                                <input type="text" id="variant" name="variant" value="">
 
-                                <label for="pmprice">PM Price(RM):</label>
-                                <input type="text" id="pmprice" name="pmprice" value="">
 
-                                <label for="emprice">EM Price(RM):</label>
-                                <input type="text" id="emprice" name="emprice" value="">
-
-                                <label for="labuan">Labuan Price:</label>
-                                <input type="text" id="labuan" name="labuan" value="">
-
-                                <label for="langkawi">Langkawi Price:</label>
-                                <input type="text" id="langkawi" name="langkawi" value="">
-
-                                <input type="submit" value="Submit">
+                                <div class="form-submit-border"><input class="btn  btn-default" type="submit"
+                                        value="Submit"></input>
+                                </div>
                             </form>
-
                         </div>
                     </div>
                 </div>
