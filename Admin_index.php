@@ -388,7 +388,8 @@ if (!$conn) {
                                                     </tr>
                                                     <tr>
                                                         <td>
-                                                            <img src="./img/X50.png" alt="" width="442" height="170" hidden="true"/>
+                                                            <img src="./img/X50.png" alt="" width="442" height="170"
+                                                                hidden="true" />
                                                             <input type="file" class="form-control">
                                                         </td>
                                                     </tr>
@@ -412,10 +413,11 @@ if (!$conn) {
                                                                 <button type="button" class="btn">Add</button>
                                                             </td>
                                                             <td colspan="0">
-                                                                <button type="button" class="btn">Edit</button>
+                                                                <button type="button" class="btn" onclick="changeReadonly()">Edit</button>
                                                             </td>
                                                             <td colspan="0">
-                                                                <button type="button" class="btn" hidden="true">Cancel</button>
+                                                                <button type="button" class="btn"
+                                                                    hidden="true">Cancel</button>
                                                             </td>
                                                         </tr>
 
@@ -452,7 +454,7 @@ if (!$conn) {
                                                     <tr>
                                                         <td>
                                                             <img src='./img/" . $row['ProductImage'] . "' alt='' width='442' height='170' />
-                                                            <p>".$row['Model']."</p>
+                                                            <p>" . $row['Model'] . "</p>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -494,7 +496,7 @@ if (!$conn) {
                                                     <tr>
                                                         <td>
                                                             <img src='./img/" . $row['ProductImage'] . "' alt='' width='442' height='170' />
-                                                            <p>".$row['Model']."</p>
+                                                            <p>" . $row['Model'] . "</p>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -518,29 +520,29 @@ if (!$conn) {
                                                 }
                                                 echo "
                                                 <tr>
-                                                            <td class='col-freez'>" . $row['Variant'] . "</td>
+                                                            <td class='col-freez'><input class='readonly' type='text' value='" . $row['Variant'] . "'/></td>
                                                             <td>
                                                                 <ul>
-                                                                    <li>" . $row['PMprice'] . "</li>
+                                                                    <li><input class='readonly' type='text' value='" . $row['PMprice'] . "/></li>
                                                                 </ul>
                                                             </td>
                                                             <td>
                                                                 <ul>
-                                                                    <li>" . $row['PMprice'] . "</li>
+                                                                    <li><input class='readonly' type='text' value='" . $row['PMprice'] . "/></li>
                                                                 </ul>
                                                             </td>
                                                             <td>
                                                                 <ul>
-                                                                    <li>" . $row['PMprice'] . "</li>
+                                                                    <li><input class='readonly' type='text' value='" . $row['PMprice'] . "/></li>
                                                                 </ul>
                                                             </td>
                                                             <td>
                                                                 <ul>
-                                                                    <li>" . $row['PMprice'] . "</li>
+                                                                    <li><input class='readonly' type='text' value='" . $row['PMprice'] . "/></li>
                                                                 </ul>
                                                             </td>
                                                             <td id='deletebtn' hidden='true'>
-                                                                <button type='button' value='".$row['ID']."' class='btn'>Delete</button>
+                                                                <button type='button' value='" . $row['ID'] . "' class='btn'>Delete</button>
                                                             </td>
                                                 </tr>
                                                 ";
@@ -557,7 +559,6 @@ if (!$conn) {
                                         }
 
                                         ?>
-
                                     </tbody>
                                 </table>
                             </div>
@@ -567,6 +568,19 @@ if (!$conn) {
                     </div>
 
                 </div>
+                <script>
+                    var inputs = document.querySelectorAll(".readonly");
+                    for (var i = 0; i < inputs.length; i++) {
+                        inputs[i].readOnly = true;
+                    }
+
+                    function changeReadonly() {
+                        var inputs2 = document.querySelectorAll(".readonly");
+                        for (var i = 0; i < inputs2.length; i++) {
+                            inputs2[i].readOnly = false;
+                        }
+                    }
+                </script>
             </section>
 
         </main>
