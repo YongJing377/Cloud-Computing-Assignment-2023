@@ -402,6 +402,7 @@ if (!$conn) {
 
 
             <section class="container-fluid no-margin no-padding light-grey-2 cars-price-list-section-wrapper">
+                <br/>
                 <div class="container">
                     <div class="row no-gutters">
                         <div class="col text-center">
