@@ -434,6 +434,7 @@ if (!$conn) {
                                         if (mysqli_num_rows($result) > 0) {
                                             // output the product image
                                             $row = mysqli_fetch_assoc($result);
+                                            $image = $row['ProductImage'];
                                             echo "
                                             <tr>
                                             <td class='text-center car-image' valign='top'>
@@ -444,7 +445,7 @@ if (!$conn) {
                                                     </tr>
                                                     <tr>
                                                         <td>
-                                                            <img src='./img/".$row['ProductImage']."' alt='' width='442' height='170' />
+                                                            <img src='./img/" . $row['ProductImage'] . "' alt='' width='442' height='170' />
                                                             <p>X50</p>
                                                         </td>
                                                     </tr>
@@ -468,27 +469,65 @@ if (!$conn) {
                                             // output the product details
                                             mysqli_data_seek($result, 0);
                                             while ($row = mysqli_fetch_assoc($result)) {
+                                                if ($image != $row['ProductImage']) {
+                                                    echo "
+                                                    
+                                                            </table>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                            <td class='text-center car-image' valign='top'>
+
+                                                <table>
+                                                    <tr>
+                                                        <th>MODEL</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <img src='./img/" . $row['ProductImage'] . "' alt='' width='442' height='170' />
+                                                            <p>X50</p>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+
+                                            </td>
+                                            <td valign='top'>
+
+                                                <div class='variants-prices-wrapper'>
+
+                                                    <table class='a38aecf98-2fe0-43d0-87e9-c7a8a5ccb1aca'>
+                                                    <tr>
+                                                    <th class='col-freez'>Variant</th>
+                                                    <th>OTR PM (RM)</th>
+                                                    <th>OTR EM (RM)</th>
+                                                    <th>OTR LABUAN (RM)</th>
+                                                    <th>OTR LANGKAWI (RM)</th>
+                                                </tr>
+                                                    ";
+
+                                                }
                                                 echo "
                                                 <tr>
-                                                            <td class='col-freez'>".$row['Variant']."</td>
+                                                            <td class='col-freez'>" . $row['Variant'] . "</td>
                                                             <td>
                                                                 <ul>
-                                                                    <li>".$row['PMprice']."</li>
+                                                                    <li>" . $row['PMprice'] . "</li>
                                                                 </ul>
                                                             </td>
                                                             <td>
                                                                 <ul>
-                                                                    <li>".$row['PMprice']."</li>
+                                                                    <li>" . $row['PMprice'] . "</li>
                                                                 </ul>
                                                             </td>
                                                             <td>
                                                                 <ul>
-                                                                    <li>".$row['PMprice']."</li>
+                                                                    <li>" . $row['PMprice'] . "</li>
                                                                 </ul>
                                                             </td>
                                                             <td>
                                                                 <ul>
-                                                                    <li>".$row['PMprice']."</li>
+                                                                    <li>" . $row['PMprice'] . "</li>
                                                                 </ul>
                                                             </td>
                                                         </tr>
@@ -504,139 +543,8 @@ if (!$conn) {
                                         } else {
                                             echo "No product found.";
                                         }
-                                        
+
                                         ?>
-                                        <tr>
-                                            <td class="text-center car-image" valign="top">
-
-                                                <table>
-                                                    <tr>
-                                                        <th>MODEL</th>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <img src="/img/X50.png" alt="" width="442" height="170" />
-                                                            <p>X50</p>
-                                                        </td>
-                                                    </tr>
-                                                </table>
-
-                                            </td>
-                                            <td valign="top">
-
-                                                <div class="variants-prices-wrapper">
-
-                                                    <table class="a38aecf98-2fe0-43d0-87e9-c7a8a5ccb1aca">
-
-                                                        <tr>
-                                                            <th class="col-freez">Variant</th>
-                                                            <th>OTR PM (RM)</th>
-                                                            <th>OTR EM (RM)</th>
-
-                                                            <th>OTR LABUAN (RM)</th>
-                                                            <th>OTR LANGKAWI (RM)</th>
-
-
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="col-freez">1.5T Standard</td>
-                                                            <td>
-                                                                <ul>
-                                                                    <li>86,300.00</li>
-                                                                </ul>
-                                                            </td>
-                                                            <td>
-                                                                <ul>
-                                                                    <li>88,300.00</li>
-                                                                </ul>
-                                                            </td>
-                                                            <td>
-                                                                <ul>
-                                                                    <li>82,600.00</li>
-                                                                </ul>
-                                                            </td>
-                                                            <td>
-                                                                <ul>
-                                                                    <li>81,000.00</li>
-                                                                </ul>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="col-freez">1.5T Executive</td>
-                                                            <td>
-                                                                <ul>
-                                                                    <li>93,300.00</li>
-                                                                </ul>
-                                                            </td>
-                                                            <td>
-                                                                <ul>
-                                                                    <li>95,300.00</li>
-                                                                </ul>
-                                                            </td>
-                                                            <td>
-                                                                <ul>
-                                                                    <li>89,600.00</li>
-                                                                </ul>
-                                                            </td>
-                                                            <td>
-                                                                <ul>
-                                                                    <li>87,900.00</li>
-                                                                </ul>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="col-freez">1.5T Premium</td>
-                                                            <td>
-                                                                <ul>
-                                                                    <li>101,800.00</li>
-                                                                </ul>
-                                                            </td>
-                                                            <td>
-                                                                <ul>
-                                                                    <li>103,800.00</li>
-                                                                </ul>
-                                                            </td>
-                                                            <td>
-                                                                <ul>
-                                                                    <li>97,800.00</li>
-                                                                </ul>
-                                                            </td>
-                                                            <td>
-                                                                <ul>
-                                                                    <li>96,100.00</li>
-                                                                </ul>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="col-freez">1.5TGDi Flagship</td>
-                                                            <td>
-                                                                <ul>
-                                                                    <li>113,300.00</li>
-                                                                </ul>
-                                                            </td>
-                                                            <td>
-                                                                <ul>
-                                                                    <li>115,300.00</li>
-                                                                </ul>
-                                                            </td>
-                                                            <td>
-                                                                <ul>
-                                                                    <li>109,100.00</li>
-                                                                </ul>
-                                                            </td>
-                                                            <td>
-                                                                <ul>
-                                                                    <li>107,400.00</li>
-                                                                </ul>
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-
-
-                                                </div>
-
-                                            </td>
-                                        </tr>
 
                                     </tbody>
                                 </table>
