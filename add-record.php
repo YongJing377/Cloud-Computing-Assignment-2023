@@ -378,7 +378,7 @@ if (!$conn) {
             <?php
             // Get the ID of the record to be deleted from the POST request
             $id = $_POST["addId"];
-            if ($id != 1){
+            if ($id != 1) {
                 $id = $id - 1;
             }
             // prepare and execute SELECT query
@@ -392,10 +392,10 @@ if (!$conn) {
             }
 
             // fetch the first row from the result set
-            $row = mysqli_fetch_assoc($result);            
+            $row = mysqli_fetch_assoc($result);
 
             ?>
-
+            <input type="text" value="<?php echo $id ?>" id="productid" name="productid" hidden="true">
             <section class="container-fluid no-margin no-padding light-grey-2 cars-price-list-section-wrapper">
                 <div class="container">
                     <div class="row no-gutters">

@@ -398,7 +398,7 @@ if (!$conn) {
             // fetch the first row from the result set
             $row2 = mysqli_fetch_assoc($result2);
 
-            ?>
+            ?>           
 
 
             <section class="container-fluid no-margin no-padding light-grey-2 cars-price-list-section-wrapper">

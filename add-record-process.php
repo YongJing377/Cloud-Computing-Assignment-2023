@@ -10,28 +10,12 @@ if (!$conn) {
 }else{
     echo "Connection Success";
 }
-$model = $_POST["model"];
+$id = $_POST["productid"];
 $variant = $_POST["variant"];
 $pmprice = $_POST["pmprice"];
 $emprice = $_POST["emprice"];
 $labuan = $_POST["labuan"];
 $langkawi = $_POST["langkawi"];
-
-$query = "SELECT * FROM Product WHERE Model = '$model'";
-$result = mysqli_query($conn, $query);
-
-// check if query executed successfully
-if (!$result) {
-    echo "Error executing query: " . mysqli_error($conn);
-    exit();
-}else{
-    echo "Execute Success";
-}
-
-// fetch the first row from the result set
-$row = mysqli_fetch_assoc($result);
-$id = $row["ProductID"];
-echo $row;
 
 // Construct and execute SQL query to delete record
 $sql = "INSERT INTO ProductDetails (Variant, PMprice, EMprice, LABUANprice, LANGKAWIprice, ProductID) VALUES ('$variant', '$pmprice', '$emprice', '$labuan', '$langkawi', '$id')";
