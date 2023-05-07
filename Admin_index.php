@@ -593,8 +593,8 @@ if (!$conn) {
                     for (var i = 0; i < deleteButtons.length; i++) {
                         deleteButtons[i].addEventListener("click", function () {
                             console.log("Delete btn clicked");
-                            var id = this.getAttribute("data-id");
-                            var xhr = new XMLHttpRequest();
+                            let id = this.getAttribute("data-id");
+                            let xhr = new XMLHttpRequest();
                             xhr.onreadystatechange = function () {
                                 if (this.readyState == 4 && this.status == 200) {
                                     alert("Record deleted successfully!");
