@@ -30,7 +30,7 @@ if (!$result) {
 
 // fetch the first row from the result set
 $row = mysqli_fetch_assoc($result);
-$id = $row['ProductID'];
+$id = $row["ProductID"];
 echo "\nI am here $id";
 
 // Construct and execute SQL query to delete record
