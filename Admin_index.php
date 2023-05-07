@@ -547,7 +547,7 @@ if (!$conn) {
                                                                 </ul>
                                                             </td>
                                                             <td id='deletebtn' class='hidden'>
-                                                                <button type='button' id='delete-btn' data-id='" . $row['ID'] . "' class='hidden btn'>Delete</button>
+                                                                <button type='button' id='delete-btn' onclick='delete('" . $row['ID'] . "')' class='hidden btn'>Delete</button>
                                                             </td>
                                                 </tr>
                                                 ";
@@ -574,10 +574,9 @@ if (!$conn) {
 
                 </div>
 
-
+                <!-- delete -->
                 <script>
-                    document.getElementById("delete-btn")[0].addEventListener("click", function () {
-                        var id = this.getAttribute("data-id");
+                    function delete(id) {
                         var xhr = new XMLHttpRequest();
                         xhr.onreadystatechange = function () {
                             if (this.readyState == 4 && this.status == 200) {
@@ -589,7 +588,7 @@ if (!$conn) {
                         xhr.open("POST", "delete-record.php", true);
                         xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
                         xhr.send("id=" + id);
-                    });
+                    }
                 </script>
 
 
