@@ -547,7 +547,7 @@ if (!$conn) {
                                                                 </ul>
                                                             </td>
                                                             <td id='deletebtn' class='hidden'>
-                                                                <form action='delete-record.php' method='POST' onsubmit='return confirm('Are you sure you want to delete this record?');'>
+                                                                <form action='delete-record.php' method='POST' onsubmit='return confirm(".'Are you sure you want to delete this record?'.");'>
                                            
                                                                     <button  type='submit' id='deleteId' class='hidden btn' value='". $row['ID'] ."' name='deleteId'>Delete</button>
                                                                                     
