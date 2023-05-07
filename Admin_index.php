@@ -386,7 +386,7 @@ if (!$conn) {
                                     <tbody>
                                         <?php
                                         // retrieve the product data
-                                        $sql = "SELECT Product.ProductImage, Product.Model, ProductDetails.ID, ProductDetails.Variant, ProductDetails.PMprice, ProductDetails.EMprice, ProductDetails.LABUANprice, ProductDetails.LANGKAWIprice 
+                                        $sql = "SELECT Product.ProductID, Product.ProductImage, Product.Model, ProductDetails.ID, ProductDetails.Variant, ProductDetails.PMprice, ProductDetails.EMprice, ProductDetails.LABUANprice, ProductDetails.LANGKAWIprice 
                                         FROM Product
                                         INNER JOIN ProductDetails
                                         ON Product.ProductID = ProductDetails.ProductID";
@@ -519,7 +519,7 @@ if (!$conn) {
                                             <tr>
                                                         <td colspan='6'>
                                                             <form action='add-record.php' method='POST'>
-                                                            <button type='submit' value='".$row['ProductID']."' name='addId' id='addId' class='hidden btn'>Add</button>
+                                                                <button type='submit' value='".$row['ProductID']."' name='addId' id='addId' class='hidden btn'>Add</button>
                                                             </form>
                                                         </td>
                                                     </tr>
