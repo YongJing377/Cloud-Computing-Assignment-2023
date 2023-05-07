@@ -31,6 +31,7 @@ if (!$result) {
 // fetch the first row from the result set
 $row = mysqli_fetch_assoc($result);
 $id = $row['ProductID'];
+echo "\nI am here $id";
 
 // Construct and execute SQL query to delete record
 $sql = "INSERT INTO ProductDetails (Variant, PMprice, EMprice, LABUANprice, LANGKAWIprice, ProductID) VALUES ('$variant', '$pmprice', '$emprice', '$labuan', '$langkawi', '$id')";
