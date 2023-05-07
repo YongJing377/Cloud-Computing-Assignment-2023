@@ -379,7 +379,7 @@ if (!$conn) {
             <section class="container-fluid no-margin no-padding light-grey-2 cars-price-list-section-wrapper">
                 <div class="row no-gutters">
                     <div class="col">
-                        <div class="container">
+                        <div class="container no-margin">
                             <div class="cars-price-list-wrapper">
                                 <table class="cars-price-list-table">
                                     <tbody>
@@ -576,19 +576,36 @@ if (!$conn) {
 
                 <!-- delete -->
                 <script>
-                    function delete(id) {
-                        var xhr = new XMLHttpRequest();
-                        xhr.onreadystatechange = function () {
-                            if (this.readyState == 4 && this.status == 200) {
-                                alert("Record deleted successfully!");
-                                // Reload the current page and force a reload from the server
-                                location.reload(true);
-                            }
-                        };
-                        xhr.open("POST", "delete-record.php", true);
-                        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-                        xhr.send("id=" + id);
+                    // function delete (id) {
+                    //     var xhr = new XMLHttpRequest();
+                    //     xhr.onreadystatechange = function () {
+                    //         if (this.readyState == 4 && this.status == 200) {
+                    //             alert("Record deleted successfully!");
+                    //             // Reload the current page and force a reload from the server
+                    //             location.reload(true);
+                    //         }
+                    //     };
+                    //     xhr.open("POST", "delete-record.php", true);
+                    //     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                    //     xhr.send("id=" + id);
+                    // }
+                    var deleteButtons = document.querySelectorAll(".delete-btn");
+                    for (var i = 0; i < deleteButtons.length; i++) {
+                        deleteButtons[i].addEventListener("click", function () {
+                            var id = this.getAttribute("data-id");
+                            var xhr = new XMLHttpRequest();
+                            xhr.onreadystatechange = function () {
+                                if (this.readyState == 4 && this.status == 200) {
+                                    alert("Record deleted successfully!");
+                                    window.location.href = "Admin_index.php";
+                                }
+                            };
+                            xhr.open("POST", "delete-record.php", true);
+                            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                            xhr.send("id=" + id);
+                        });
                     }
+
                 </script>
 
 
