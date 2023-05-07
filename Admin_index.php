@@ -422,7 +422,7 @@ if (!$conn) {
                                                                     onclick="changeReadonly()">Edit</button>
                                                             </td>
                                                             <td colspan="0">
-                                                                <button type="button" class="btn"
+                                                                <button type="button" class="hidden btn"
                                                                     hidden="true">Cancel</button>
                                                             </td>
                                                         </tr>
@@ -548,7 +548,7 @@ if (!$conn) {
                                                                 </ul>
                                                             </td>
                                                             <td id='deletebtn' class='hidden'>
-                                                                <button type='button' value='" . $row['ID'] . "' class='hidden'>Delete</button>
+                                                                <button type='button' value='" . $row['ID'] . "' class='hidden btn'>Delete</button>
                                                             </td>
                                                 </tr>
                                                 ";
