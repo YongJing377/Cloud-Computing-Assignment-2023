@@ -106,7 +106,6 @@ if (!$conn) {
         .readonly {
             display: inline-block;
         }
-        
     </style>
 </head>
 
@@ -414,16 +413,16 @@ if (!$conn) {
                                                             <th>OTR LANGKAWI (RM)</th>
                                                         </tr>
                                                         <tr>
-                                                            <td colspan="3">
+                                                            <td colspan="2">
                                                                 <button type="button" class="btn">Add</button>
                                                             </td>
                                                             <td colspan="0">
                                                                 <button type="button" class="btn"
                                                                     onclick="changeReadonly()">Edit</button>
                                                             </td>
-                                                            <td colspan="0">
+                                                            <td colspan="2">
                                                                 <button type="button" class="hidden btn"
-                                                                    hidden="true">Cancel</button>
+                                                                    hidden="true">Comfirm</button>
                                                             </td>
                                                         </tr>
 
@@ -548,7 +547,7 @@ if (!$conn) {
                                                                 </ul>
                                                             </td>
                                                             <td id='deletebtn' class='hidden'>
-                                                                <button type='button' value='" . $row['ID'] . "' class='hidden btn'>Delete</button>
+                                                                <button type='button' id='delete-btn' data-id='" . $row['ID'] . "' class='hidden btn'>Delete</button>
                                                             </td>
                                                 </tr>
                                                 ";
@@ -574,6 +573,24 @@ if (!$conn) {
                     </div>
 
                 </div>
+
+                
+                <script>
+                    document.getElementById("delete-btn").addEventListener("click", function () {
+                        var id = this.getAttribute("data-id");
+                        var xhr = new XMLHttpRequest();
+                        xhr.onreadystatechange = function () {
+                            if (this.readyState == 4 && this.status == 200) {
+                                alert("Record deleted successfully!");
+                            }
+                        };
+                        xhr.open("POST", "delete-record.php", true);
+                        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                        xhr.send("id=" + id);
+                    });
+                </script>
+
+
                 <script>
                     var inputs = document.querySelectorAll(".readonly");
                     for (var i = 0; i < inputs.length; i++) {
@@ -588,18 +605,18 @@ if (!$conn) {
                     function changeReadonly() {
                         var inputs2 = document.querySelectorAll(".readonly");
                         for (var i = 0; i < inputs2.length; i++) {
-                            if(inputs2[i].readOnly == false){
+                            if (inputs2[i].readOnly == false) {
                                 inputs2[i].readOnly = true;
-                            }else{
+                            } else {
                                 inputs2[i].readOnly = false;
                             }
                         }
 
                         var hidden2 = document.querySelectorAll(".hidden");
                         for (var i = 0; i < hidden2.length; i++) {
-                            if(hidden2[i].hidden == false){
+                            if (hidden2[i].hidden == false) {
                                 hidden2[i].hidden = true;
-                            }else{
+                            } else {
                                 hidden2[i].hidden = false;
                             }
                         }
