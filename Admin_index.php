@@ -102,7 +102,11 @@ if (!$conn) {
         })(window, document, 'script', 'dataLayer', 'GTM-5C9Q5M9');
     </script>
     <!-- End Google Tag Manager -->
-
+    <style>
+        .readonly {
+            display: inline-block;
+        }
+    </style>
 </head>
 
 <body>
@@ -413,7 +417,8 @@ if (!$conn) {
                                                                 <button type="button" class="btn">Add</button>
                                                             </td>
                                                             <td colspan="0">
-                                                                <button type="button" class="btn" onclick="changeReadonly()">Edit</button>
+                                                                <button type="button" class="btn"
+                                                                    onclick="changeReadonly()">Edit</button>
                                                             </td>
                                                             <td colspan="0">
                                                                 <button type="button" class="btn"
@@ -542,7 +547,7 @@ if (!$conn) {
                                                                 </ul>
                                                             </td>
                                                             <td id='deletebtn' hidden='true'>
-                                                                <button type='button' value='" . $row['ID'] . "' class='btn'>Delete</button>
+                                                                <button type='button' value='" . $row['ID'] . "' class='btn' hidden='true'>Delete</button>
                                                             </td>
                                                 </tr>
                                                 ";
@@ -574,10 +579,28 @@ if (!$conn) {
                         inputs[i].readOnly = true;
                     }
 
+                    var hidden = document.querySelectorAll(".hidden");
+                    for (var i = 0; i < hidden.length; i++) {
+                        hidden[i].hidden = true;
+                    }
+
                     function changeReadonly() {
                         var inputs2 = document.querySelectorAll(".readonly");
                         for (var i = 0; i < inputs2.length; i++) {
-                            inputs2[i].readOnly = false;
+                            if(inputs2[i].readOnly == false){
+                                inputs2[i].readOnly = true;
+                            }else{
+                                inputs2[i].readOnly = false;
+                            }
+                        }
+
+                        var hidden2 = document.querySelectorAll(".hidden");
+                        for (var i = 0; i < hidden2.length; i++) {
+                            if(hidden2[i].hidden == false){
+                                hidden2[i].hidden = true;
+                            }else{
+                                hidden2[i].hidden = false;
+                            }
                         }
                     }
                 </script>
