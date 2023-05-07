@@ -332,10 +332,10 @@ if (!$conn) {
 
                                 <div class="banner-wrapper" data-video-link="">
                                     <div class="banner-main feature-banner white left center-y"
-                                        style="background-image: url('./img/career_mainbanner_desktop.jpg')">
+                                        style="background-image: url('./img/Career_MainBanner_desktop.jpg')">
 
 
-                                        <img src="./img/career_mainbanner_mobile.jpg" class="sm-mobile-view" alt=""
+                                        <img src="./img/Career_MainBanner_mobile.jpg" class="sm-mobile-view" alt=""
                                             width="640" height="500" DisableWebEdit="False" />
 
 
