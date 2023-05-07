@@ -389,8 +389,8 @@ if (!$conn) {
             // fetch the first row from the result set
             $row = mysqli_fetch_assoc($result);
 
-            $productid = $row['ProductId'];
-            $query2 = "SELECT * FROM Product WHERE ID = $productid";
+            $productid = $row['ProductID'];
+            $query2 = "SELECT * FROM Product WHERE ProductID = $productid";
             $result2 = mysqli_query($conn, $query2);
             // fetch the first row from the result set
             $row2 = mysqli_fetch_assoc($result2);
