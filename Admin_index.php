@@ -520,25 +520,25 @@ if (!$conn) {
                                                 }
                                                 echo "
                                                 <tr>
-                                                            <td class='col-freez'><input class='readonly' type='text' value='" . $row['Variant'] . "'/></td>
+                                                            <td class='col-freez'><input class='readonly' type='text' value='" . $row['Variant'] . "'></td>
                                                             <td>
                                                                 <ul>
-                                                                    <li><input class='readonly' type='text' value='" . $row['PMprice'] . "/></li>
+                                                                    <li><input class='readonly' type='text' value='" . $row['PMprice'] . "></li>
                                                                 </ul>
                                                             </td>
                                                             <td>
                                                                 <ul>
-                                                                    <li><input class='readonly' type='text' value='" . $row['PMprice'] . "/></li>
+                                                                    <li><input class='readonly' type='text' value='" . $row['PMprice'] . "></li>
                                                                 </ul>
                                                             </td>
                                                             <td>
                                                                 <ul>
-                                                                    <li><input class='readonly' type='text' value='" . $row['PMprice'] . "/></li>
+                                                                    <li><input class='readonly' type='text' value='" . $row['PMprice'] . "></li>
                                                                 </ul>
                                                             </td>
                                                             <td>
                                                                 <ul>
-                                                                    <li><input class='readonly' type='text' value='" . $row['PMprice'] . "/></li>
+                                                                    <li><input class='readonly' type='text' value='" . $row['PMprice'] . "></li>
                                                                 </ul>
                                                             </td>
                                                             <td id='deletebtn' hidden='true'>
