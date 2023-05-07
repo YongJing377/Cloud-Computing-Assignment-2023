@@ -16,6 +16,9 @@ $sql = "DELETE FROM ProductDetails WHERE ID = $id";
 
 if ($conn->query($sql) === TRUE) {
   echo "Record deleted successfully";
+  header("Location: Admin_index.php");
+  exit();
+
 } else {
   echo "Error deleting record: " . $conn->error;
 }
