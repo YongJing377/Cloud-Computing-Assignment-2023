@@ -574,14 +574,16 @@ if (!$conn) {
 
                 </div>
 
-                
+
                 <script>
-                    document.getElementById("delete-btn").addEventListener("click", function () {
+                    document.getElementById("delete-btn")[0].addEventListener("click", function () {
                         var id = this.getAttribute("data-id");
                         var xhr = new XMLHttpRequest();
                         xhr.onreadystatechange = function () {
                             if (this.readyState == 4 && this.status == 200) {
                                 alert("Record deleted successfully!");
+                                // Reload the current page and force a reload from the server
+                                location.reload(true);
                             }
                         };
                         xhr.open("POST", "delete-record.php", true);
