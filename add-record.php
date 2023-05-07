@@ -375,9 +375,10 @@ if (!$conn) {
             </section>
             <!-- /End Home page Carousel -->
             <?php
+            // Get the ID of the record to be deleted from the POST request
             $id = $_POST["addId"];
             // prepare and execute SELECT query
-            $query = "SELECT * FROM ProductDetails WHERE ID = $id";
+            $query = "SELECT * FROM Product WHERE ProductID = $id";
             $result = mysqli_query($conn, $query);
 
             // check if query executed successfully
@@ -389,11 +390,6 @@ if (!$conn) {
             // fetch the first row from the result set
             $row = mysqli_fetch_assoc($result);
 
-            $productid = $row['ProductID'];
-            $query2 = "SELECT * FROM Product WHERE ProductID = $productid";
-            $result2 = mysqli_query($conn, $query2);
-            // fetch the first row from the result set
-            $row2 = mysqli_fetch_assoc($result2);
             ?>
 
             <section class="container-fluid no-margin no-padding light-grey-2 cars-price-list-section-wrapper">
@@ -409,7 +405,7 @@ if (!$conn) {
                                             style="display: flex; justify-content: center; align-items: center;">
                                             <label for="model">Model:</label>
                                             <input type="text" class="form-control" id="model" name="model"
-                                                value="<?php echo $row2['Model']; ?>" disabled>
+                                                value="<?php echo $row['Model']; ?>" disabled>
                                         </div>
                                     </div>
                                 </div>
