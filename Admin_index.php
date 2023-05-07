@@ -424,7 +424,7 @@ if (!$conn) {
 
                                         <?php
                                         // retrieve the product data
-                                        $sql = "SELECT Product.ProductImage, ProductDetails.Variant, ProductDetails.PMprice, ProductDetails.EMprice, ProductDetails.LABUANprice, ProductDetails.LANGKAWIprice 
+                                        $sql = "SELECT Product.ProductImage, Product.Model, ProductDetails.Variant, ProductDetails.PMprice, ProductDetails.EMprice, ProductDetails.LABUANprice, ProductDetails.LANGKAWIprice 
                                         FROM Product
                                         INNER JOIN ProductDetails
                                         ON Product.ProductID = ProductDetails.ProductID";
@@ -446,7 +446,7 @@ if (!$conn) {
                                                     <tr>
                                                         <td>
                                                             <img src='./img/" . $row['ProductImage'] . "' alt='' width='442' height='170' />
-                                                            <p>X50</p>
+                                                            <p>".$row['Model']."</p>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -487,7 +487,7 @@ if (!$conn) {
                                                     <tr>
                                                         <td>
                                                             <img src='./img/" . $row['ProductImage'] . "' alt='' width='442' height='170' />
-                                                            <p>X50</p>
+                                                            <p>".$row['Model']."</p>
                                                         </td>
                                                     </tr>
                                                 </table>
