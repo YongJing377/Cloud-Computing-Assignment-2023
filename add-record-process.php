@@ -7,6 +7,8 @@ $dbname = "Proton";
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
+}else{
+    echo "Connection Success";
 }
 $model = $_POST["model"];
 $variant = $_POST["variant"];
@@ -15,7 +17,7 @@ $emprice = $_POST["emprice"];
 $labuan = $_POST["labuan"];
 $langkawi = $_POST["langkawi"];
 
-$query = "SELECT * FROM Product WHERE Model=$model";
+$query = "SELECT * FROM Product WHERE Model = '$model'";
 $result = mysqli_query($conn, $query);
 
 // check if query executed successfully
@@ -31,16 +33,13 @@ $id = $row['ProductID'];
 // Construct and execute SQL query to delete record
 $sql = "INSERT INTO ProductDetails (Variant, PMprice, EMprice, LABUANprice, LANGKAWIprice, ProductID) VALUES ('$variant', '$pmprice', '$emprice', '$labuan', '$langkawi', '$id')";
 
-if ($conn->query($sql) === TRUE) {
-    echo "Record add successfully";
-    header("Location: Admin_index.php");
-    exit();
-
+// Execute the query
+if (mysqli_query($conn, $sql)) {
+    echo "Record added successfully.";
 } else {
-    echo "Error adding record: " . $conn->error;
+    echo "Error adding record: " . mysqli_error($conn);
 }
 
-
-// Close database connection
-$conn->close();
+// Close the database connection
+mysqli_close($conn);
 ?>
