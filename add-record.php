@@ -374,14 +374,8 @@
                                         <div class="form-group"
                                             style="display: flex; justify-content: center; align-items: center;">
                                             <label for="model">Model:</label>
-                                            <select class="form-control" id="model" name="model">
-                                                <option value="X50">X50</option>
-                                                <option value="X70">X70</option>
-                                                <option value="Saga">Saga</option>
-                                                <option value="Persona">Persona</option>
-                                                <option value="Iriz">Iriz</option>
-                                                <option value="Exora">Exora</option>
-                                            </select>
+                                            <input type="text" class="form-control" id="model" name="model"
+                                    value="<?php $row2['Model'] ?>" disabled>
                                         </div>
                                     </div>
                                 </div>
