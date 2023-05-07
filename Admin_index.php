@@ -284,7 +284,7 @@
                                     </div>
                                     <div class="tool-item">
 
-                                        <a href="/CarPriceList.html">
+                                        <a href="/Admin_index.php">
                                             <img src="/img/carpricelist-icon.svg" alt="" width="80" height="85"
                                                 DisableWebEdit="False" />
                                             <span>Car Price List</span>
