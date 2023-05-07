@@ -380,11 +380,11 @@ $id = $_POST["editId"];
             <?php
             // prepare and execute SELECT query
             $query = "SELECT * FROM ProductDetails WHERE ID=$id";
-            $result = mysqli_query($connection, $query);
+            $result = mysqli_query($conn, $query);
 
             // check if query executed successfully
             if (!$result) {
-                echo "Error executing query: " . mysqli_error($connection);
+                echo "Error executing query: " . mysqli_error($conn);
                 exit();
             }
 
