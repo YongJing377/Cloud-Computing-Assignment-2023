@@ -1,3 +1,15 @@
+<?php
+$servername = "proton-db-1.c3iemkdozdsc.us-east-1.rds.amazonaws.com";
+$username = "admin1234";
+$password = "admin1234";
+$dbname = "Proton";
+
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -362,20 +374,42 @@
 
             </section>
             <!-- /End Home page Carousel -->
+            <?php
+            $id = $_POST["ID"];
+            // prepare and execute SELECT query
+            $query = "SELECT * FROM ProductDetails WHERE ID = $id";
+            $result = mysqli_query($conn, $query);
+
+            // check if query executed successfully
+            if (!$result) {
+                echo "Error executing query: " . mysqli_error($conn);
+                exit();
+            }
+
+            // fetch the first row from the result set
+            $row = mysqli_fetch_assoc($result);
+
+            $productid = $row['ProductId'];
+            $query2 = "SELECT * FROM Product WHERE ID = $productid";
+            $result2 = mysqli_query($conn, $query2);
+            // fetch the first row from the result set
+            $row2 = mysqli_fetch_assoc($result2);
+            ?>
 
             <section class="container-fluid no-margin no-padding light-grey-2 cars-price-list-section-wrapper">
                 <div class="container">
                     <div class="row no-gutters">
                         <div class="col text-center">
                             <form action="add-record-process.php" method="POST"
-                                class="online-booking-form x50-booking-form text-left" onsubmit="return confirm('Are you sure to add record?');">
+                                class="online-booking-form x50-booking-form text-left"
+                                onsubmit="return confirm('Are you sure to add record?');">
                                 <div class="row no-gutters">
                                     <div class="col">
                                         <div class="form-group"
                                             style="display: flex; justify-content: center; align-items: center;">
                                             <label for="model">Model:</label>
                                             <input type="text" class="form-control" id="model" name="model"
-                                    value="<?php $row2['Model'] ?>" disabled>
+                                                value="<?php $row2['Model'] ?>" disabled>
                                         </div>
                                     </div>
                                 </div>
@@ -414,8 +448,7 @@
                                         <div class="form-group"
                                             style="display: flex; justify-content: center; align-items: center;">
                                             <label for="labuan">Labuan Price:</label>
-                                            <input type="text" class="form-control" id="labuan" name="labuan"
-                                                required>
+                                            <input type="text" class="form-control" id="labuan" name="labuan" required>
                                         </div>
                                     </div>
                                 </div>
@@ -626,3 +659,9 @@
 </body>
 
 </html>
+
+<?php
+
+// Close database connection
+$conn->close();
+?>
