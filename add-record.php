@@ -409,7 +409,7 @@ if (!$conn) {
                                             style="display: flex; justify-content: center; align-items: center;">
                                             <label for="model">Model:</label>
                                             <input type="text" class="form-control" id="model" name="model"
-                                                value="<?php $row2['Model'] ?>" disabled>
+                                                value="<?php echo $row2['Model']; ?>" disabled>
                                         </div>
                                     </div>
                                 </div>

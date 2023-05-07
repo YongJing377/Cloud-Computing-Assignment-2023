@@ -8,8 +8,7 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-// Get the ID of the record to be deleted from the POST request
-$id = $_POST["editId"];
+
 ?>
 
 <!DOCTYPE html>
@@ -378,6 +377,8 @@ $id = $_POST["editId"];
             <!-- /End Home page Carousel -->
 
             <?php
+            // Get the ID of the record to be deleted from the POST request
+            $id = $_POST["editId"];
             // prepare and execute SELECT query
             $query = "SELECT * FROM ProductDetails WHERE ID = $id";
             $result = mysqli_query($conn, $query);
@@ -390,8 +391,8 @@ $id = $_POST["editId"];
 
             // fetch the first row from the result set
             $row = mysqli_fetch_assoc($result);
-
             $productid = $row['ProductID'];
+
             $query2 = "SELECT * FROM Product WHERE ProductID = $productid";
             $result2 = mysqli_query($conn, $query2);
             // fetch the first row from the result set
@@ -413,7 +414,7 @@ $id = $_POST["editId"];
                                             style="display: flex; justify-content: center; align-items: center;">
                                             <label for="model">Model:</label>
                                             <input type="text" class="form-control" id="model" name="model"
-                                    value="<?php $row2['Model'] ?>" disabled>
+                                    value="<?php echo $row2['Model']; ?>" disabled>
                                         </div>
                                     </div>
                                 </div>
@@ -422,7 +423,7 @@ $id = $_POST["editId"];
                                         <div class="form-group"
                                             style="display: flex; justify-content: center; align-items: center;">
                                             <label for="variant">Variant:</label>
-                                            <input type="text" class="form-control" id="variant" name="variant" value="<?php $row['Variant'] ?>"
+                                            <input type="text" class="form-control" id="variant" name="variant" value="<?php echo $row['Variant'];?>"
                                                 required>
                                         </div>
                                     </div>
@@ -432,7 +433,7 @@ $id = $_POST["editId"];
                                         <div class="form-group"
                                             style="display: flex; justify-content: center; align-items: center;">
                                             <label for="pmprice">PM Price:</label>
-                                            <input type="text" class="form-control" id="pmprice" name="pmprice" value="<?php $row['PMprice'] ?>"
+                                            <input type="text" class="form-control" id="pmprice" name="pmprice" value="<?php echo $row['PMprice']; ?>"
                                                 required>
                                         </div>
                                     </div>
@@ -442,7 +443,7 @@ $id = $_POST["editId"];
                                         <div class="form-group"
                                             style="display: flex; justify-content: center; align-items: center;">
                                             <label for="emprice">EM Price:</label>
-                                            <input type="text" class="form-control" id="emprice" name="emprice" value="<?php $row['EMprice'] ?>"
+                                            <input type="text" class="form-control" id="emprice" name="emprice" value="<?php echo $row['EMprice']; ?>"
                                                 required>
                                         </div>
                                     </div>
@@ -452,7 +453,7 @@ $id = $_POST["editId"];
                                         <div class="form-group"
                                             style="display: flex; justify-content: center; align-items: center;">
                                             <label for="labuan">Labuan Price:</label>
-                                            <input type="text" class="form-control" id="labuan" name="labuan"  value="<?php $row['LABUANprice'] ?>" required>
+                                            <input type="text" class="form-control" id="labuan" name="labuan"  value="<?php echo $row['LABUANprice']; ?>" required>
                                         </div>
                                     </div>
                                 </div>
@@ -462,9 +463,9 @@ $id = $_POST["editId"];
                                             style="display: flex; justify-content: center; align-items: center;">
                                             <label for="langkawi">Langkawi:</label>
                                             <input type="text" class="form-control" id="langkawi" name="langkawi" 
-                                                value="<?php $row['LANGKAWIprice'] ?>" required>
+                                                value="<?php echo $row['LANGKAWIprice']; ?>" required>
 
-                                            <input type="text" class="form-control" hidden="true" value="<?php $row['ID'] ?>" id="ID"
+                                            <input type="text" class="form-control" hidden="true" value="<?php echo $row['ID']; ?>" id="ID"
                                                 name="ID">
                                         </div>
                                     </div>
