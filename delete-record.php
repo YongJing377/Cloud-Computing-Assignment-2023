@@ -9,7 +9,7 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 // Get the ID of the record to be deleted from the POST request
-$id = $_POST["id"];
+$id = $_POST["deleteId"];
 
 // Construct and execute SQL query to delete record
 $sql = "DELETE FROM ProductDetails WHERE ID = $id";

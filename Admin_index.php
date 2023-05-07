@@ -547,7 +547,11 @@ if (!$conn) {
                                                                 </ul>
                                                             </td>
                                                             <td id='deletebtn' class='hidden'>
-                                                                <button type='button' id='delete-btn' data-id='" . $row['ID'] . "' class='hidden btn'>Delete</button>
+                                                                <form action='delete-record.php' method='POST' onsubmit='return confirm('Are you sure you want to delete this record?');'>
+                                           
+                                                                    <button  type='submit' id='deleteId' class='hidden btn' value='". $row['ID'] ."' name='deleteId'>Delete</button>
+                                                                                    
+                                                                </form>
                                                             </td>
                                                 </tr>
                                                 ";
@@ -576,36 +580,7 @@ if (!$conn) {
 
                 <!-- delete -->
                 <script>
-                    // function delete (id) {
-                    //     var xhr = new XMLHttpRequest();
-                    //     xhr.onreadystatechange = function () {
-                    //         if (this.readyState == 4 && this.status == 200) {
-                    //             alert("Record deleted successfully!");
-                    //             // Reload the current page and force a reload from the server
-                    //             location.reload(true);
-                    //         }
-                    //     };
-                    //     xhr.open("POST", "delete-record.php", true);
-                    //     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-                    //     xhr.send("id=" + id);
-                    // }
-                    var deleteButtons = document.querySelectorAll(".delete-btn");
-                    for (var i = 0; i < deleteButtons.length; i++) {
-                        deleteButtons[i].addEventListener("click", function () {
-                            console.log("Delete btn clicked");
-                            let id = this.getAttribute("data-id");
-                            let xhr = new XMLHttpRequest();
-                            xhr.onreadystatechange = function () {
-                                if (this.readyState == 4 && this.status == 200) {
-                                    alert("Record deleted successfully!");
-                                    window.location.href = "Admin_index.php";
-                                }
-                            };
-                            xhr.open("POST", "delete-record.php", true);
-                            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-                            xhr.send("id=" + id);
-                        });
-                    }
+                    
 
                 </script>
 
