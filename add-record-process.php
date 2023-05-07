@@ -29,7 +29,7 @@ $row = mysqli_fetch_assoc($result);
 $id = $row['ProductID'];
 
 // Construct and execute SQL query to delete record
-$sql = "INSERT INTO ProductDetails ('Variant', 'PMprice', 'EMprice', 'LABUANprice', 'LANGKAWIprice', 'ProductID') VALUES ('$variant', '$pmprice', '$emprice', '$labuan', '$langkawi', '$id')";
+$sql = "INSERT INTO ProductDetails (Variant, PMprice, EMprice, LABUANprice, LANGKAWIprice, ProductID) VALUES ('$variant', '$pmprice', '$emprice', '$labuan', '$langkawi', '$id')";
 
 if ($conn->query($sql) === TRUE) {
     echo "Record add successfully";

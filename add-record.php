@@ -378,6 +378,9 @@ if (!$conn) {
             <?php
             // Get the ID of the record to be deleted from the POST request
             $id = $_POST["addId"];
+            if ($id != 1){
+                $id = $id - 1;
+            }
             // prepare and execute SELECT query
             $query = "SELECT * FROM Product WHERE ProductID = $id";
             $result = mysqli_query($conn, $query);
@@ -389,7 +392,7 @@ if (!$conn) {
             }
 
             // fetch the first row from the result set
-            $row = mysqli_fetch_assoc($result);
+            $row = mysqli_fetch_assoc($result);            
 
             ?>
 
