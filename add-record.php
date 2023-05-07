@@ -367,7 +367,7 @@
                 <div class="container">
                     <div class="row no-gutters">
                         <div class="col text-center">
-                            <form action="add-record.php" method="POST"
+                            <form action="add-record-process.php" method="POST"
                                 class="online-booking-form x50-booking-form text-left" onsubmit="return confirm('Are you sure to add record?');">
                                 <div class="row no-gutters">
                                     <div class="col">
@@ -410,7 +410,7 @@
                                         <div class="form-group"
                                             style="display: flex; justify-content: center; align-items: center;">
                                             <label for="emprice">EM Price:</label>
-                                            <input type="text" class="form-control" id="emprice" name="variempriceant"
+                                            <input type="text" class="form-control" id="emprice" name="emprice"
                                                 required>
                                         </div>
                                     </div>
@@ -439,7 +439,7 @@
 
 
                                 <div class="form-submit-border"><input class="btn  btn-default" type="submit"
-                                        value="Submit"></input>
+                                        value="Add"></input>
                                 </div>
                             </form>
                         </div>

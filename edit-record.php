@@ -391,7 +391,7 @@ $id = $_POST["editId"];
             // fetch the first row from the result set
             $row = mysqli_fetch_assoc($result);
 
-            $productid=$row['ProductId'];
+            $productid = $row['ProductId'];
             $query2 = "SELECT * FROM Product WHERE ID=$productid";
             $result2 = mysqli_query($connection, $query);
             // fetch the first row from the result set
@@ -402,36 +402,83 @@ $id = $_POST["editId"];
 
             <section class="container-fluid no-margin no-padding light-grey-2 cars-price-list-section-wrapper">
                 <div class="container">
-                    <div class="row">
-                        <div class="col">
-                            <form method="POST" action="edit-record-process.php" onsubmit="return confirm('Are you sure to edit this record');">
-                                <label for="disabled_input">Model:</label>
-                                <input type="text" id="disabled_input" name="disabled_input"
-                                    value="<?php $row2['Model']?>" disabled>
+                    <div class="row no-gutters">
+                        <div class="col text-center">
+                            <form action="edit-record-process.php" method="POST"
+                                class="online-booking-form x50-booking-form text-left"
+                                onsubmit="return confirm('Are you sure to edit record?');">
+                                <div class="row no-gutters">
+                                    <div class="col">
+                                        <div class="form-group"
+                                            style="display: flex; justify-content: center; align-items: center;">
+                                            <label for="model">Model:</label>
+                                            <input type="text" class="form-control" id="model" name="model"
+                                    value="<?php $row2['Model'] ?>" disabled>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row no-gutters">
+                                    <div class="col">
+                                        <div class="form-group"
+                                            style="display: flex; justify-content: center; align-items: center;">
+                                            <label for="variant">Variant:</label>
+                                            <input type="text" class="form-control" id="variant" name="variant" value="<?php $row['Variant'] ?>"
+                                                required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row no-gutters">
+                                    <div class="col">
+                                        <div class="form-group"
+                                            style="display: flex; justify-content: center; align-items: center;">
+                                            <label for="pmprice">PM Price:</label>
+                                            <input type="text" class="form-control" id="pmprice" name="pmprice" value="<?php $row['PMprice'] ?>"
+                                                required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row no-gutters">
+                                    <div class="col">
+                                        <div class="form-group"
+                                            style="display: flex; justify-content: center; align-items: center;">
+                                            <label for="emprice">EM Price:</label>
+                                            <input type="text" class="form-control" id="emprice" name="emprice" value="<?php $row['EMprice'] ?>"
+                                                required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row no-gutters">
+                                    <div class="col">
+                                        <div class="form-group"
+                                            style="display: flex; justify-content: center; align-items: center;">
+                                            <label for="labuan">Labuan Price:</label>
+                                            <input type="text" class="form-control" id="labuan" name="labuan"  value="<?php $row['LABUANprice'] ?>" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row no-gutters">
+                                    <div class="col">
+                                        <div class="form-group"
+                                            style="display: flex; justify-content: center; align-items: center;">
+                                            <label for="langkawi">Langkawi:</label>
+                                            <input type="text" class="form-control" id="langkawi" name="langkawi" 
+                                                value="<?php $row['LANGKAWIprice'] ?>" required>
 
-                                <label for="variant">Variant:</label>
-                                <input type="text" id="variant" name="variant" value="<?php $row['Variant']?>">
+                                            <input type="text" class="form-control" hidden="true" value="<?php $row['ID'] ?>" id="ID"
+                                                name="ID">
+                                        </div>
+                                    </div>
+                                </div>
 
-                                <label for="pmprice">PM Price(RM):</label>
-                                <input type="text" id="pmprice" name="pmprice" value="<?php $row['PMprice']?>">
 
-                                <label for="emprice">EM Price(RM):</label>
-                                <input type="text" id="emprice" name="emprice" value="<?php $row['EMprice']?>">
 
-                                <label for="labuan">Labuan Price:</label>
-                                <input type="text" id="labuan" name="labuan" value="<?php $row['LABUANprice']?>">
-
-                                <label for="langkawi">Langkawi Price:</label>
-                                <input type="text" id="langkawi" name="langkawi" value="<?php $row['LANGKAWIprice']?>">
-
-                                <input type="text" hidden="true"  value="<?php $row['ID']?>" id="ID" name="ID">
-
-                                <input type="submit" value="Submit">
+                                <div class="form-submit-border"><input class="btn  btn-default" type="submit"
+                                        value="Edit"></input>
+                                </div>
                             </form>
-
                         </div>
                     </div>
-                </div>
+                </div>                
 
             </section>
 
