@@ -8,6 +8,8 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
+// Get the ID of the record to be deleted from the POST request
+$id = $_POST["editId"];
 ?>
 
 <!DOCTYPE html>
@@ -375,206 +377,62 @@ if (!$conn) {
             </section>
             <!-- /End Home page Carousel -->
 
+            <?php
+            // prepare and execute SELECT query
+            $query = "SELECT * FROM ProductDetails WHERE ID=$id";
+            $result = mysqli_query($connection, $query);
+
+            // check if query executed successfully
+            if (!$result) {
+                echo "Error executing query: " . mysqli_error($connection);
+                exit();
+            }
+
+            // fetch the first row from the result set
+            $row = mysqli_fetch_assoc($result);
+
+            $productid=$row['ProductId'];
+            $query2 = "SELECT * FROM Product WHERE ID=$productid";
+            $result2 = mysqli_query($connection, $query);
+            // fetch the first row from the result set
+            $row2 = mysqli_fetch_assoc($result);
+
+            ?>
 
 
             <section class="container-fluid no-margin no-padding light-grey-2 cars-price-list-section-wrapper">
-                <div class="row no-gutters">
-                    <div class="col">
-                        <div class="container no-margin">
-                            <div class="cars-price-list-wrapper">
-                                <table class="cars-price-list-table">
-                                    <tbody>
-                                        <?php
-                                        // retrieve the product data
-                                        $sql = "SELECT Product.ProductImage, Product.Model, ProductDetails.ID, ProductDetails.Variant, ProductDetails.PMprice, ProductDetails.EMprice, ProductDetails.LABUANprice, ProductDetails.LANGKAWIprice 
-                                        FROM Product
-                                        INNER JOIN ProductDetails
-                                        ON Product.ProductID = ProductDetails.ProductID";
-                                        $result = mysqli_query($conn, $sql);
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <form method="POST" action="edit-record-process.php" onsubmit="return confirm('Are you sure to edit this record');">
+                                <label for="disabled_input">Model:</label>
+                                <input type="text" id="disabled_input" name="disabled_input"
+                                    value="<?php $row2['Model']?>" disabled>
 
-                                        // check if any rows were returned
-                                        if (mysqli_num_rows($result) > 0) {
-                                            // output the product image
-                                            $row = mysqli_fetch_assoc($result);
-                                            $image = $row['ProductImage'];
-                                            echo "
-                                            <tr>
-                                            <td class='text-center car-image' valign='top'>
+                                <label for="variant">Variant:</label>
+                                <input type="text" id="variant" name="variant" value="<?php $row['Variant']?>">
 
-                                                <table>
-                                                    <tr>
-                                                        <th>MODEL</th>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <img src='./img/" . $row['ProductImage'] . "' alt='' width='442' height='170' />
-                                                            <p>" . $row['Model'] . "</p>
-                                                        </td>
-                                                    </tr>
-                                                </table>
+                                <label for="pmprice">PM Price(RM):</label>
+                                <input type="text" id="pmprice" name="pmprice" value="<?php $row['PMprice']?>">
 
-                                            </td>
-                                            <td valign='top'>
+                                <label for="emprice">EM Price(RM):</label>
+                                <input type="text" id="emprice" name="emprice" value="<?php $row['EMprice']?>">
 
-                                                <div class='variants-prices-wrapper'>
+                                <label for="labuan">Labuan Price:</label>
+                                <input type="text" id="labuan" name="labuan" value="<?php $row['LABUANprice']?>">
 
-                                                    <table class='a38aecf98-2fe0-43d0-87e9-c7a8a5ccb1aca'>
-                                                    <tr>
-                                                    <th class='col-freez'>Variant</th>
-                                                    <th>OTR PM (RM)</th>
-                                                    <th>OTR EM (RM)</th>
-                                                    <th>OTR LABUAN (RM)</th>
-                                                    <th>OTR LANGKAWI (RM)</th>
-                                                    <th id='action' class='hidden'>Action</th>
-                                                </tr>
-                                            ";
+                                <label for="langkawi">Langkawi Price:</label>
+                                <input type="text" id="langkawi" name="langkawi" value="<?php $row['LANGKAWIprice']?>">
 
-                                            // output the product details
-                                            mysqli_data_seek($result, 0);
-                                            while ($row = mysqli_fetch_assoc($result)) {
-                                                if ($image != $row['ProductImage']) {
-                                                    $image = $row['ProductImage'];
-                                                    echo "
-                                                    <tr>
-                                                        <td colspan='6'>
-                                                            <form action='add-record.php' method='POST'>
-                                                            <button type='submit' class='hidden btn'>Add</button>
-                                                            </form>
-                                                        </td>
-                                                    </tr>
-                                                    
-                                                            </table>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                            <td class='text-center car-image' valign='top'>
+                                <input type="text" hidden="true"  value="<?php $row['ID']?>" id="ID" name="ID">
 
-                                                <table>
-                                                    <tr>
-                                                        <th>MODEL</th>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <img src='./img/" . $row['ProductImage'] . "' alt='' width='442' height='170' />
-                                                            <p>" . $row['Model'] . "</p>
-                                                        </td>
-                                                    </tr>
-                                                </table>
-
-                                            </td>
-                                            <td valign='top'>
-
-                                                <div class='variants-prices-wrapper'>
-
-                                                    <table class='a38aecf98-2fe0-43d0-87e9-c7a8a5ccb1aca'>
-                                                    <tr>
-                                                    <th class='col-freez'>Variant</th>
-                                                    <th>OTR PM (RM)</th>
-                                                    <th>OTR EM (RM)</th>
-                                                    <th>OTR LABUAN (RM)</th>
-                                                    <th>OTR LANGKAWI (RM)</th>
-                                                    <th id='action' class='hidden'>Action</th>
-                                                </tr>
-                                                    ";
-
-                                                }
-                                                echo "
-                                                <tr>
-                                                            <td class='col-freez'><input class='readonly' type='text' value='" . $row['Variant'] . "'/></td>
-                                                            <td>
-                                                                <ul>
-                                                                    <li><input class='readonly' type='text' value='" . $row['PMprice'] . "'/></li>
-                                                                </ul>
-                                                            </td>
-                                                            <td>
-                                                                <ul>
-                                                                    <li><input class='readonly' type='text' value='" . $row['PMprice'] . "'/></li>
-                                                                </ul>
-                                                            </td>
-                                                            <td>
-                                                                <ul>
-                                                                    <li><input class='readonly' type='text' value='" . $row['PMprice'] . "'/></li>
-                                                                </ul>
-                                                            </td>
-                                                            <td>
-                                                                <ul>
-                                                                    <li><input class='readonly' type='text' value='" . $row['PMprice'] . "'/></li>
-                                                                </ul>
-                                                            </td>
-                                                            <td id='deletebtn' class='hidden'>
-                                                            <form action='edit-record.php' method='POST'>
-                                                                <button type='submit' id='editId' name='editId' class='hidden btn' value='" . $row['ID'] . "'>Edit</button>
-                                                            </form>
-                                                                <form action='delete-record.php' method='POST' onsubmit='return confirm(" . 'Are you sure you want to delete this record?' . ");'>
-                                        
-                                                                    <button  type='submit' id='deleteId' class='hidden btn' value='" . $row['ID'] . "' name='deleteId'>Delete</button>
-                                                                                   
-                                                                </form>
-                                                            </td>
-                                                </tr>
-                                                ";
-                                            }
-                                            echo "
-                                                        </table>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            ";
-
-                                        } else {
-                                            echo "No product found.";
-                                        }
-
-                                        ?>
-                                    </tbody>
-                                </table>
-                            </div>
+                                <input type="submit" value="Submit">
+                            </form>
 
                         </div>
-
                     </div>
-
                 </div>
 
-                <!-- delete -->
-                <script>
-
-
-                </script>
-
-
-                <script>
-                    var inputs = document.querySelectorAll(".readonly");
-                    for (var i = 0; i < inputs.length; i++) {
-                        inputs[i].readOnly = true;
-                    }
-
-                    var hidden = document.querySelectorAll(".hidden");
-                    for (var i = 0; i < hidden.length; i++) {
-                        hidden[i].hidden = true;
-                    }
-
-                    function changeReadonly() {
-                        var inputs2 = document.querySelectorAll(".readonly");
-                        for (var i = 0; i < inputs2.length; i++) {
-                            if (inputs2[i].readOnly == false) {
-                                inputs2[i].readOnly = true;
-                            } else {
-                                inputs2[i].readOnly = false;
-                            }
-                        }
-
-                        var hidden2 = document.querySelectorAll(".hidden");
-                        for (var i = 0; i < hidden2.length; i++) {
-                            if (hidden2[i].hidden == false) {
-                                hidden2[i].hidden = true;
-                            } else {
-                                hidden2[i].hidden = false;
-                            }
-                        }
-                    }
-                </script>
             </section>
 
         </main>
@@ -763,6 +621,6 @@ if (!$conn) {
 </html>
 
 <?php
-// close the database connection
-mysqli_close($conn);
+// Close database connection
+$conn->close();
 ?>
