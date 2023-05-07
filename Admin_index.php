@@ -592,6 +592,7 @@ if (!$conn) {
                     var deleteButtons = document.querySelectorAll(".delete-btn");
                     for (var i = 0; i < deleteButtons.length; i++) {
                         deleteButtons[i].addEventListener("click", function () {
+                            console.log("Delete btn clicked");
                             var id = this.getAttribute("data-id");
                             var xhr = new XMLHttpRequest();
                             xhr.onreadystatechange = function () {
